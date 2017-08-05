@@ -1,5 +1,5 @@
 # React Web
-This is React web application using [React, Sass, Gulp and Node.js](https://www.youtube.com/watch?v=nusgoj74a3Y).
+This is React web application using [Sass, Gulp and Node.js](https://www.youtube.com/watch?v=nusgoj74a3Y).
 
 ## To use
 
