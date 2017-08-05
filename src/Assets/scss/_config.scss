@@ -1,0 +1,81 @@
+/*
+Vars
+*/
+$black: #010000;
+$white: #ffffff;
+$lightGrey: #e6e6e6;
+$darkGrey: #333;
+$superGrey: #141414;
+$limeGreen: #abff00;
+$red: #ff0000;
+$darkRed: #aa0000;
+$pinkRose: #ff1755;
+$fuchsia: #ff00de;
+$blackRed: #150000;
+$blueRose: #1755ff;
+$blackBlue: #00000d;
+
+/*
+Mixins
+*/
+
+@mixin translateY($e) {
+  -webkit-transform: translateY($e);
+  -moz-transform: translateY($e);
+  -ms-transform: translateY($e);
+  transform: translateY($e);
+}
+
+@mixin transition($e) {
+    -webkit-transition: $e;
+    -moz-transition: $e;
+    -ms-transition: $e;
+    transition: $e;
+}
+
+@mixin scale($e) {
+  -webkit-transform: scale($e);
+  -moz-transform: scale($e);
+  -ms-transform: scale($e);
+  transform: scale($e);
+}
+
+/* Fonts -
+
+regular 400
+regular 400 italic
+bold 700
+bold 700 italic
+
+*/
+
+html, body, .container-fluid {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: $black;
+  font-weight:400;
+  font-style: normal;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  @include transition(.4s ease-in-out);
+
+  &:hover {
+    color: $pinkRose;
+    @include transition(.4s ease-in-out);
+  }
+}
+
+.container-fluid {
+  line-height: 1.428;
+}
+
+.red {
+  color: $red;
+}
