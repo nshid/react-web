@@ -1,0 +1,230 @@
+@import "_config.scss";
+
+header {
+  position: fixed;
+  display: block;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  background: repeating-linear-gradient(
+    -55deg,
+    $blackRed,
+    $blackRed 10px,
+    $black 10px,
+    $black 20px
+  );
+  color: $white;
+  height: 90px;
+
+  .logo {
+    color: $white;
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    top: 50%; left: 15px;
+    text-decoration: none;
+    @include translateY(-50%);
+
+    h2 {
+      visibility: visible;
+    }
+  }
+
+  nav,
+  nav ul,
+  nav ul li {
+      margin: 0;
+      padding: 0;
+  }
+
+  nav {
+    position: absolute;
+    top: 50%; right: 15px;
+    @include translateY(-50%);
+
+    ul li {
+      list-style-type: none;
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    &.last {
+      margin: 0;
+    }
+
+    a {
+      font-size: 19px;
+      line-height: normal;
+      color: $white;
+    }
+
+    a:link, a:active {
+      @extend .neon;
+    }
+
+  }
+
+  .neon {
+    text-align: center;
+    margin: 200px auto;
+    text-transform: uppercase;
+    -webkit-animation: pulse 1.5s ease-in-out infinite alternate;
+    -moz-animation: pulse 1.5s ease-in-out infinite alternate;
+    -ms-animation: pulse 1.5s ease-in-out infinite alternate;
+    -o-animation: pulse 1.5s ease-in-out infinite alternate;
+    animation: pulse 1.5s ease-in-out infinite alternate;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  @-webkit-keyframes pulse {
+    from {
+      text-shadow: 0 0 10px $white,
+                 0 0 20px $white,
+                 0 0 30px $white,
+                 0 0 40px $fuchsia,
+                 0 0 70px $fuchsia,
+                 0 0 80px $fuchsia,
+                 0 0 100px $fuchsia,
+                 0 0 150px $fuchsia;
+    }
+
+    to {
+      text-shadow: 0 0 5px $white,
+                 0 0 10px $white,
+                 0 0 15px $white,
+                 0 0 20px $fuchsia,
+                 0 0 35px $fuchsia,
+                 0 0 40px $fuchsia,
+                 0 0 50px $fuchsia,
+                 0 0 75px $fuchsia;
+    }
+  }
+
+}
+
+body {
+  margin-top: 90px;
+  margin-bottom: 30px;
+
+  .s-blk-shadow {
+    text-shadow: 5px 5px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  a.p-link:hover {
+    background: $lightGrey !important;
+  }
+
+  .pin-hide-4 {
+    cursor: zoom-in;
+    cursor: pointer;
+
+    &:before {
+      content: '****'
+    }
+
+    &:hover {
+      &:before {
+        content: '';
+      }
+
+      &:after{
+        content: attr(data-code);
+      }
+    }
+  }
+
+  .line-sm > input {
+    line-height: 0.5;
+  }
+
+  .led-box {
+    height: 30px;
+    width: 25%;
+    margin: 20px -20px;
+  }
+
+  .led-green {
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+    background-color: $limeGreen;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+  }
+
+  .led-red {
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+    background-color: $red;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+    -webkit-animation: blinkRed 0.5s infinite;
+    -moz-animation: blinkRed 0.5s infinite;
+    -ms-animation: blinkRed 0.5s infinite;
+    -o-animation: blinkRed 0.5s infinite;
+    animation: blinkRed 0.5s infinite;
+  }
+
+  @-webkit-keyframes blinkRed {
+    from { background-color: $red; }
+    50% { background-color: $darkRed; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: $red; }
+  }
+
+  @-moz-keyframes blinkRed {
+    from { background-color: $red; }
+    50% { background-color: $darkRed; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: $red; }
+  }
+
+  @-ms-keyframes blinkRed {
+    from { background-color: $red; }
+    50% { background-color: $darkRed; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: $red; }
+  }
+
+  @-o-keyframes blinkRed {
+    from { background-color: $red; }
+    50% { background-color: $darkRed; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: $red; }
+  }
+
+  @keyframes blinkRed {
+    from { background-color: $red; }
+    50% { background-color: $darkRed; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+    to { background-color: $red; }
+  }
+}
+
+footer {
+  position: fixed;
+  right: 0; bottom: 0; left: 0;
+  display: block;
+  width: 100%;
+  z-index: 100;
+  background: repeating-linear-gradient(
+    -55deg,
+    $black,
+    $black 10px,
+    $blackBlue 10px,
+    $blackBlue 20px
+  );
+  color: $white;
+  height: 30px;
+  text-align: center;
+
+  a {
+    font-size: 15px;
+    line-height: normal;
+    color: $white;
+
+    &:hover {
+      color: $blueRose !important;
+    }
+  }
+}
