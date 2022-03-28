@@ -17,7 +17,7 @@
     "is-svg": ">=4.2.2",
     "js-yaml": ">=3.13.1",
     "macaddress": ">=0.2.9",
-    "minimist": ">=0.2.1",
+    "minimist": ">=1.2.6",
     "no-case": ">=2.3.2",
     "node-forge": ">=0.10.0",
     "querystringify": ">=2.0.0",    
